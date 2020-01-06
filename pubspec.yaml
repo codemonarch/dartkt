@@ -1,7 +1,7 @@
 name: dartkt
-description: kotlin extensions for dart
-version: 1.0.0
-homepage: https://rarnu.xyz
+description: A dart library for lazier programmers. Functions are ported from kotlin.
+version: 1.0.1
+homepage: https://github.com/codemonarch/dartkt
 
 environment:
   sdk: '>=2.7.0 <3.0.0'
