@@ -10,4 +10,5 @@ export 'src/map_extension.dart';
 export 'src/object_extension.dart';
 export 'src/pair_extension.dart';
 export 'src/regex_extension.dart';
+export 'src/set_extension.dart';
 export 'src/string_extension.dart';
