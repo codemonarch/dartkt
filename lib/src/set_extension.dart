@@ -2,7 +2,6 @@ import 'package:dartkt/src/object_extension.dart';
 import 'package:dartkt/src/pair_extension.dart';
 
 extension KTSetExtension<T> on Set<T> {
-
   T find(bool Function(T) block) {
     for (var element in this) {
       if (block(element)) {
@@ -70,7 +69,7 @@ extension KTSetExtension<T> on Set<T> {
   Set<T> filterIndexed(bool Function(int idx, T item) block) {
     var ret = <T>{};
     for (var i = 0; i < length; i++) {
-    if (block(i, elementAt(i))) ret.add(elementAt(i));
+      if (block(i, elementAt(i))) ret.add(elementAt(i));
     }
     return ret;
   }
@@ -92,14 +91,14 @@ extension KTSetExtension<T> on Set<T> {
   }
 
   Set<T> sortBy(int Function(T first, T second) block) => let((it) {
-    it.toList().sort(block);
-    return it;
-  });
+        it.toList().sort(block);
+        return it;
+      });
 
   Set<T> sortByDescending(int Function(T first, T second) block) => let((it) {
-    it.toList().sort(block);
-    return it.toList().reversed;
-  });
+        it.toList().sort(block);
+        return it.toList().reversed;
+      });
 
   Set<R> map2<R>(R Function(T) block) {
     var ret = <R>{};
@@ -187,7 +186,7 @@ extension KTSetExtension<T> on Set<T> {
 
   T reduceIndexed(T Function(int idx, T acc, T s) block) {
     var accumulator = elementAt(0);
-      for (var i = 1; i < length; i++) {
+    for (var i = 1; i < length; i++) {
       accumulator = block(i, accumulator, elementAt(i));
     }
     return accumulator;
@@ -236,7 +235,8 @@ extension KTSetExtension<T> on Set<T> {
     return dest;
   }
 
-  C mapIndexedTo<R, C extends Set<R>>(C dest, R Function(int idx, T item) block) {
+  C mapIndexedTo<R, C extends Set<R>>(
+      C dest, R Function(int idx, T item) block) {
     for (var i = 0; i < length; i++) {
       dest.add(block(i, elementAt(i)));
     }
@@ -252,7 +252,8 @@ extension KTSetExtension<T> on Set<T> {
     return dest;
   }
 
-  C filterIndexedTo<C extends Set<T>>(C dest, bool Function(int idx, T item) block) {
+  C filterIndexedTo<C extends Set<T>>(
+      C dest, bool Function(int idx, T item) block) {
     for (var i = 0; i < length; i++) {
       if (block(i, elementAt(i))) {
         dest.add(elementAt(i));
@@ -269,5 +270,4 @@ extension KTSetExtension<T> on Set<T> {
     }
     return dest;
   }
-
 }
