@@ -213,4 +213,11 @@ extension KTStringExtension on String {
   }
 
   String get md5sha1 => hash('MD5') + hash('SHA1');
+
+  Map<String, String> toMap() => split('&')
+      .map2((s) => s.split('=').let((i) => KTPair(i[0], i[1])))
+      .toMap<String, String>();
+  Map<String, String> toCookieMap() => split(';')
+      .map2((s) => s.trim().split('=').let((i) => KTPair(i[0], i[1])))
+      .toMap<String, String>();
 }

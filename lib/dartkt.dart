@@ -1,6 +1,7 @@
 library dartkt;
 
 export 'src/bytearray_extension.dart';
+export 'src/config_extension.dart';
 export 'src/download_extension.dart';
 export 'src/file_extension.dart';
 export 'src/http_extension.dart';

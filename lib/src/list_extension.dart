@@ -290,3 +290,7 @@ extension KTListListExtension<T> on List<List<T>> {
     return ret;
   }
 }
+
+extension KTStringListExtension on List<String> {
+  List<String> skipEmptyLine() => filterNot((it) => it.trim() == '');
+}

@@ -165,4 +165,7 @@ extension KTMapExtension<K, V> on Map<K, V> {
     });
     return dest;
   }
+
+  String toCookieString() =>
+      mapToList((it) => '${it.key}=${it.value}').join(';');
 }
